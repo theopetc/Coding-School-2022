@@ -54,16 +54,19 @@ namespace Session_02b
             int years = days / 365;
 
             Console.WriteLine(seconds + " seconds are " + minutes + " minutes, which is " + hours  + " hours, which is " + days + " days, which is " + years + " years.");
+            Console.WriteLine();
 
             //6.
             TimeSpan test = TimeSpan.FromSeconds(seconds);
             Console.WriteLine((int)test.TotalSeconds + " seconds are " + (int)test.TotalMinutes + " minutes, which is " + (int)test.TotalHours + " hours, which is " + (int)test.TotalDays + " days, which is " + (int)(test.TotalDays / 365) + " years.");
+            Console.WriteLine();
 
             //7.
             double celsius = 26;
             double toKelvin = celsius + 273.15;
             double toFahrenheit = (1.8 * celsius) + 32;
             Console.WriteLine(celsius + " degrees Celsius is " + toKelvin + " degrees Kelvin or " + toFahrenheit + " degrees Fahrenheit.");
+            Console.WriteLine();
 
 
             Console.ReadLine();
