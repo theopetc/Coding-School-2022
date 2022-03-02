@@ -58,8 +58,14 @@ namespace Session_02b
             //6.
             TimeSpan test = TimeSpan.FromSeconds(seconds);
             Console.WriteLine((int)test.TotalSeconds + " seconds are " + (int)test.TotalMinutes + " minutes, which is " + (int)test.TotalHours + " hours, which is " + (int)test.TotalDays + " days, which is " + (int)(test.TotalDays / 365) + " years.");
-            
+
             //7.
+            double celsius = 26;
+            double toKelvin = celsius + 273.15;
+            double toFahrenheit = (1.8 * celsius) + 32;
+            Console.WriteLine(celsius + " degrees Celsius is " + toKelvin + " degrees Kelvin or " + toFahrenheit + " degrees Fahrenheit.");
+
+
             Console.ReadLine();
 
 
