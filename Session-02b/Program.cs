@@ -44,8 +44,7 @@ namespace Session_02b
             string gender = "female";
 
             Console.WriteLine("You are " + gender + " and look younger than " + age);
-
-            
+            Console.WriteLine();
 
             //5.
             int seconds = 45678;
@@ -56,7 +55,14 @@ namespace Session_02b
 
             Console.WriteLine(seconds + " seconds are " + minutes + " minutes, which is " + hours  + " hours, which is " + days + " days, which is " + years + " years.");
 
+            //6.
+            TimeSpan test = TimeSpan.FromSeconds(seconds);
+            Console.WriteLine((int)test.TotalSeconds + " seconds are " + (int)test.TotalMinutes + " minutes, which is " + (int)test.TotalHours + " hours, which is " + (int)test.TotalDays + " days, which is " + (int)(test.TotalDays / 365) + " years.");
+            
+            //7.
             Console.ReadLine();
+
+
 
         }
     }
