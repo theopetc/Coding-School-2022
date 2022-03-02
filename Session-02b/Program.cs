@@ -45,7 +45,19 @@ namespace Session_02b
 
             Console.WriteLine("You are " + gender + " and look younger than " + age);
 
+            
+
+            //5.
+            int seconds = 45678;
+            int minutes = seconds / 60;
+            int hours = minutes / 60;
+            int days = hours / 24;
+            int years = days / 365;
+
+            Console.WriteLine(seconds + " seconds are " + minutes + " minutes, which is " + hours  + " hours, which is " + days + " days, which is " + years + " years.");
+
             Console.ReadLine();
+
         }
     }
 }
