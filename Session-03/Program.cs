@@ -10,10 +10,7 @@ namespace Session_03
     {
         static void Main(string[] args)
         {
-            Guid guid = Guid.NewGuid();
-            Console.WriteLine(guid.ToString());
-
-            Console.ReadLine();
+            
         }
     }
 }
