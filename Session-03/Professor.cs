@@ -17,8 +17,6 @@ namespace Session_03
             Rank = "Associate Professor";//Entry level rank
         }
 
-        //SetRank, GetRank wasn't required
-
         public void Teach(Course course, DateTime datetime)
         {
             Console.WriteLine("Teaches " + course + " at " + datetime);
