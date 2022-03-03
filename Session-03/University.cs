@@ -11,6 +11,7 @@ namespace Session_03
         Student[] Students = new Student[30];
         Course[] Courses = new Course[20];
         Grade[] Grades = new Grade[20*30];//Total university grades
+        Schedule[] ScheduledCourse = new Schedule[60];
 
         public University()
         {
