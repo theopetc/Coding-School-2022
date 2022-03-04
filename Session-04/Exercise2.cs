@@ -15,32 +15,40 @@ namespace Session_04
 
         public int GetProduct(int n)
         {
-            //if (n <= 0)
-            //{
-            //    Console.WriteLine("Your input is invalid!");
-            //    return 0;
-            //}
-            int result = 1;
-            for (int i = 1; i <= n; i++)
+            int result = 0;
+            if (IsPositive(n))
             {
-                result *= i;
+                for (int i = 0; i <= n; i++)
+                {
+                    result *= i;
+                }                
             }
             return result;
         }
 
         public int GetSum(int n)
         {
-            //if (n <= 0)
-            //{
-            //    Console.WriteLine("Your input is invalid!");
-            //    return;
-            //}
             int result = 0;
-            for (int i = 0; i <= n; i++)
+            if (IsPositive(n))
             {
-                result += i;
+                for (int i = 0; i <= n; i++)
+                {
+                    result += i;
+                }
             }
             return result;
+        }
+
+        private bool IsPositive(int n)
+        {
+            if (n <= 0)
+            {
+                Console.WriteLine("Your input is invalid!");
+                Console.Write("Press any key to continue...");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+            return true;
         }
     }
 }

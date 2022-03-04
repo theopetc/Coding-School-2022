@@ -16,7 +16,8 @@ namespace Session_04
         public string Prime(int n)
         {
             string result = String.Empty;
-
+            if (!IsPositive(n)){}
+            
             for (int i = 2; i <= n; i++)
             {
                 if (IsPrime(i))
@@ -24,7 +25,6 @@ namespace Session_04
                     result += $"{i} ";
                 }
             }
-
             return result;
         }
 
@@ -38,6 +38,18 @@ namespace Session_04
                 }
             }
 
+            return true;
+        }
+
+        private bool IsPositive(int n)
+        {
+            if (n <= 0)
+            {
+                Console.WriteLine("Your input is invalid!");
+                Console.Write("Press any key to continue...");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
             return true;
         }
     }
