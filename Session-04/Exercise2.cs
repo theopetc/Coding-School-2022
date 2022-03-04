@@ -15,10 +15,10 @@ namespace Session_04
 
         public int GetProduct(int n)
         {
-            int result = 0;
+            int result = 1;
             if (IsPositive(n))
             {
-                for (int i = 0; i <= n; i++)
+                for (int i = 1; i <= n; i++)
                 {
                     result *= i;
                 }                
