@@ -9,7 +9,7 @@ namespace Session_03
     internal class Person
     {
         Guid _UniqueID;
-        public string _Name;
+        internal string _Name;
         ushort _Age;
 
         public Person()

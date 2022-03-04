@@ -13,7 +13,6 @@ namespace Session_03
 
         public Professor()
         {
-            _Name = "Dr." + _Name;
             Rank = "Associate Professor";//Entry level rank
         }
 
@@ -22,7 +21,8 @@ namespace Session_03
             Console.WriteLine("Teaches " + course + " at " + datetime);
         }
 
-        public void SetGrade(Guid studentID, Guid courseID, int grade)
+        //private void SetGrade(Student student, Grade student.grade, int grade);
+        private void SetGrade(Guid studentID, Guid courseID, int grade)
         {
 
         }
@@ -30,7 +30,7 @@ namespace Session_03
         //override
         public new string GetName()
         {
-            return _Name;
+            return "Dr." + _Name;
         }
     }
 }
