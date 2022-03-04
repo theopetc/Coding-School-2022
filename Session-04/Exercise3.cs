@@ -16,7 +16,7 @@ namespace Session_04
         public string Prime(int n)
         {
             string result = String.Empty;
-            if (!IsPositive(n)){}
+            if (!IsPositive(n)){} //Different approach from Exercise 2
             
             for (int i = 2; i <= n; i++)
             {
