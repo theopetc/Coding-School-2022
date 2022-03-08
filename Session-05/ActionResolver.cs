@@ -26,7 +26,6 @@ namespace Session_05
                 if (CheckInput(input) != "Integer") 
                 {
                     msg.MessageContent = "Invalid input";
-                    //Logger.Write(msg);  
                     WriteMessage(msg);
                 }
 
@@ -35,7 +34,6 @@ namespace Session_05
                 response.Output = "The number you entered is " + Convert.ToString(number, 2) + " in binary";
                 
                 msg.MessageContent = response.Output;
-                //Logger.Write(msg);                
                 WriteMessage(msg);
             }
 
@@ -78,7 +76,6 @@ namespace Session_05
                 if (CheckInput(input) != "Integer")
                 {
                     msg.MessageContent = "Invalid input";
-                    //Logger.Write(msg);
                     WriteMessage(msg);
                 }
                 int stringLength = input.Length;
@@ -94,8 +91,7 @@ namespace Session_05
                     response.Output += Convert.ToString(result[i]);
                 }
 
-                msg.MessageContent = response.Output;
-                //Logger.Write(msg);
+                msg.MessageContent = response.Output;               
                 WriteMessage(msg);
             }
             

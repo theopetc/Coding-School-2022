@@ -38,20 +38,6 @@ namespace Session_05
                     throw new Exception();
             }
 
-
-            //request.Action = ActionEnum.Convert;
-            //response = a.Execute(request);
-            //Console.WriteLine(response.Output);
-
-            //request.Action = ActionEnum.Uppercase;
-            //response = a.Execute(request);
-            //Console.WriteLine(response.Output);
-
-            //request.Action = ActionEnum.Reverse;
-            //response = a.Execute(request);
-            //Console.WriteLine(response.Output);
-
-
             Console.ReadLine();
         }
     }
