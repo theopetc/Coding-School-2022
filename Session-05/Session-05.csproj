@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ActionRequest.cs" />
     <Compile Include="ActionResolver.cs" />
+    <Compile Include="ActionResolver2.cs" />
     <Compile Include="ActionResponse.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="Message.cs" />
