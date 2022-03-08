@@ -15,7 +15,7 @@ namespace Session_05
         {
             for (int i = 0; i < 200; i++)
             {
-                Messages[i].MessageContent = String.Empty;
+                Messages[i].MessageContent = "";
             }
         }
 
@@ -36,8 +36,7 @@ namespace Session_05
         }
 
         public void Write(Message message)
-        {
-            Console.WriteLine("test");
+        {            
             int i = 0;
 
             while (!string.IsNullOrEmpty(Messages[i].MessageContent))
@@ -45,7 +44,7 @@ namespace Session_05
                 i++;
             }
 
-            Messages[i].MessageContent = message.MessageContent;
+            Messages[i].MessageContent += message.MessageContent;
         }
 
     }

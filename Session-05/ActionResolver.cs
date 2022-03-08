@@ -132,13 +132,12 @@ namespace Session_05
         {
             try
             {
-                Logger.Write(msg);
+                //Logger.Write(msg);
             }
-            catch (Exception ex)
+            catch (NullReferenceException ex)
             {
                 Console.WriteLine(ex.ToString());
-            }
-                
+            }                
         }
     }
 }

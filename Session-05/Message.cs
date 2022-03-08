@@ -17,6 +17,7 @@ namespace Session_05
             //init guid and timestamp
             ID = Guid.NewGuid();
             TimeStamp = DateTime.Now;
+            MessageContent = String.Empty;
 
         }
 
