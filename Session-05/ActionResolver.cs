@@ -8,7 +8,7 @@ namespace Session_05
 {
     internal class ActionResolver
     {
-        public MessageLogger Logger { get; set; }
+        public MessageLogger Logger = new MessageLogger();
         public ActionResolver()
         {
 
@@ -128,7 +128,7 @@ namespace Session_05
         {
             try
             {
-                //Logger.Write(msg);
+                Logger.Write(msg);
             }
             catch (NullReferenceException ex)
             {
