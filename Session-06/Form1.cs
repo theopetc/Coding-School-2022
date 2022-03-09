@@ -29,7 +29,17 @@ namespace Session_06
             }
             operationPressed = false;
             Button b = (Button)sender;
-            result.Text += b.Text;
+            if (b.Text == ",")
+            {
+                if (!result.Text.Contains(","))
+                {
+                    result.Text += b.Text;
+                }                
+            }
+            else
+            {
+                result.Text += b.Text;
+            }            
         }
 
         private void button17_Click(object sender, EventArgs e)
