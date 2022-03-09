@@ -89,7 +89,7 @@ namespace Calculator
 
         }
 
-        public virtual string Operation(decimal x)
+        public string Operation(decimal x)
         {
             string result = Convert.ToString(Math.Sqrt( (double)x ));
             return result;

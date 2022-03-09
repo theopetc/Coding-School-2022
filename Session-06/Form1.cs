@@ -26,8 +26,8 @@ namespace Session_06
             if ((result.Text == "0") || (operationPressed))
             {
                 result.Clear();
-            }      
-                
+            }
+            operationPressed = false;
             Button b = (Button)sender;
             result.Text += b.Text;
         }
@@ -79,8 +79,7 @@ namespace Session_06
                 
                 default:
                     break;
-            }         
-            operationPressed = false;
+            }                     
         }
     }
 }
