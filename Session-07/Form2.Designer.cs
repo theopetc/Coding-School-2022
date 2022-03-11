@@ -100,8 +100,7 @@
             this.textAge.Location = new System.Drawing.Point(392, 39);
             this.textAge.Name = "textAge";
             this.textAge.Size = new System.Drawing.Size(32, 20);
-            this.textAge.TabIndex = 9;
-            this.textAge.EditValueChanged += new System.EventHandler(this.textAge_EditValueChanged);
+            this.textAge.TabIndex = 9;            
             // 
             // textRegNumber
             // 
@@ -139,6 +138,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(75, 40);
             this.simpleButton2.TabIndex = 22;
             this.simpleButton2.Text = "Delete";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton3
             // 

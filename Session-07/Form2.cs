@@ -28,12 +28,11 @@ namespace Session_07
         }
 
         private void SelectStudent()
-        {
-            //TODO: revisit
-            //if (_selectedStudent != null)
-            //{
+        {            
+            if (_selectedStudent != null)
+            {
                 _selectedStudent = Students[listBox1.SelectedIndex];
-            //}
+            }
         }
 
         private void DisplayStudent()
@@ -58,17 +57,13 @@ namespace Session_07
                         
                         
                     }
-                }
-                
-                
-                //checkedListBoxControl1.check
+                }                                                
             }
             else
             {                
                 textName.Text = string.Empty;
                 textAge.Text = "0";
             }
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,9 +145,18 @@ namespace Session_07
             this.DialogResult = DialogResult.OK;
         }
 
-        private void textAge_EditValueChanged(object sender, EventArgs e)
+        private void simpleButton2_Click(object sender, EventArgs e)
         {
+            //delete
+            if (_selectedStudent != null)
+            {
+                Students.Remove(_selectedStudent);
 
+                _selectedStudent = null;
+
+                ShowList();
+            }
+            DisplayStudent();
         }
     }
 }
