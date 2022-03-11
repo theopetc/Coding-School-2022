@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Course
+    public class Course
     {
-        Guid ID = new Guid();
-        string Code;
-        string Subject;
+        public Guid ID { get; set; }
+        public string Code { get; set; }
+        public string Subject { get; set; }
 
         public Course()
         {
+            Code = "00";
+            Subject = "";
 
+            ID = Guid.NewGuid();    
         }
 
 

@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Grade
+    public class Grade
     {
-        Guid ID = Guid.NewGuid();
-        Guid StudentID = new Guid();
-        Guid CourseID = new Guid();
-        int _Grade;
+        Guid ID { get; set; }
+        Guid StudentID { get; set; }
+        Guid CourseID { get; set; }
+        public int GradeValue { get; set; }
 
-        //Grade should only be changed by a professor
         public Grade()
         {
-           
+            ID = Guid.NewGuid();
         }
     }
 }

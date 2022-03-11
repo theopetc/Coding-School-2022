@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Student
+    public class Student : Person
     {
-        int RegistrationNumber;
-        Course[] Courses = new Course[20];
+        public int RegistrationNumber { get; set; }
+        public List<Course> Courses = new List<Course>(); 
 
         public Student()
         {
+            Name = String.Empty;
+            Age = 0;
             RegistrationNumber = 0;
+            //Course c = new Course();
+            //c.Subject = "";
+            //c.Code = "0";    
+            //Courses.Add(c);
         }
 
         public void Attend(Course course, DateTime dateTime)
@@ -26,6 +32,22 @@ namespace Session_03
             Console.WriteLine("Writes " + course + " at " + dateTime);
         }
 
+        public Student ShallowCopy()
+        {
+            return (Student)MemberwiseClone();
+        }
 
+
+    }
+
+    [Serializable]
+    public class StudentList
+    {
+        public List<Student> Students { get; set; }
+
+        public StudentList()
+        {
+
+        }
     }
 }

@@ -6,31 +6,16 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class University : Institute
+    public class University : Institute
     {
-        Student[] Students = new Student[30];
-        Course[] Courses = new Course[20];
-        Grade[] Grades = new Grade[20*30];//Total university grades
-        Schedule[] ScheduledCourse = new Schedule[60];
+        public List<Student> Students { get; set; }
+        public List<Course> Courses { get; set; }
+        public List<Grade> Grades { get; set; }
+        public List<Schedule> ScheduledCourse { get; set; }        
 
         public University()
         {
 
-        }
-
-        public Student[] GetStudents()
-        {
-            return Students;
-        }
-
-        public Course[] GetCourses()
-        {
-            return Courses;
-        }
-        
-        public Grade[] GetGrades()
-        {
-            return Grades;
         }
 
         public void SetSchedule(Guid courseID, Guid ProfessorID, DateTime datetime)

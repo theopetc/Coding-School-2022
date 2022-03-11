@@ -81,6 +81,7 @@ namespace Session_06
                 case "sqrt":
                     calculate = new Calculator.SquareRoot();
                     result.Text = calculate.Operation(value, Decimal.Parse(result.Text));
+                    //result.Text = calculate.Operation(value); 
                     break;
                 case "^":
                     calculate = new Calculator.Power();

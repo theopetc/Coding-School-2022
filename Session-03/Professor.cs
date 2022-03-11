@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Professor : Person
+    public class Professor : Person
     {
-        string Rank;
-        Course[] Courses = new Course[20];
+        public string Rank { get; set; }
+        public List<Course> Courses { get; set; }        
 
         public Professor()
         {
@@ -21,16 +21,14 @@ namespace Session_03
             Console.WriteLine("Teaches " + course + " at " + datetime);
         }
 
-        //private void SetGrade(Student student, Grade student.grade, int grade);
-        private void SetGrade(Guid studentID, Guid courseID, int grade)
+        public void SetGrade(Student student, Course course, int grade)
         {
-
+            //int index = student.Courses.IndexOf(course);
+            //student.Courses[index] = course;
         }
+        //public void SetGrade(Guid studentID, Guid courseID, int grade)
+        //{
 
-        //override
-        public new string GetName()
-        {
-            return "Dr." + _Name;
-        }
+        //}
     }
 }

@@ -6,28 +6,15 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Person
+    public class Person
     {
-        Guid _UniqueID;
-        internal string _Name;
-        ushort _Age;
+        Guid UniqueID { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
 
         public Person()
         {
-            _UniqueID = Guid.NewGuid();
+            UniqueID = Guid.NewGuid();
         }
-
-        public string GetName() 
-        { 
-            return _Name;
-        }
-
-        public void SetName(string name)
-        {
-            _Name = name;
-        }
-
-
-       
     }
 }

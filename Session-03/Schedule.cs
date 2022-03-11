@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Schedule
+    public class Schedule
     {
-        Guid ID;
-        Guid CourseID;
-        Guid ProfessorID;
-        DateTime Callendar;
+        Guid ID { get; set; }
+        Guid CourseID { get; set; }
+        Guid ProfessorID { get; set; }
+        DateTime Callendar { get; set; }
 
         public Schedule()
         {
-
+            ID = Guid.NewGuid();
         }
 
 

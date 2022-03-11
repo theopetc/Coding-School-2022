@@ -6,25 +6,15 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Institute
+    public class Institute
     {
-        Guid ID;
-        string _Name;
-        int YearsInService;
+        Guid ID { get; set; }
+        public string _Name { get; set; }
+        public int YearsInService { get; set; }
 
         public Institute()
         {
             ID = Guid.NewGuid();
-        }
-
-        public string GetName()
-        {
-            return _Name;
-        }
-
-        public void SetName(string Name)
-        {
-            _Name = Name;   
         }
     }
 }
