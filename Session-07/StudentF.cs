@@ -11,37 +11,65 @@ using System.Windows.Forms;
 
 namespace Session_07
 {
-    public partial class formStudent : Form
+    public partial class StudentF : Form
     {
         public List<Student> Students { get; set; }
 
         private Student _selectedStudent = new Student();
         private Student _originalStudent = new Student();
-        public formStudent()
+        public StudentF()
         {
             InitializeComponent();
         }
 
         private void formStudent_Load(object sender, EventArgs e)
         {
+            //University university = new University();
+            //university.Students = new List<Student>();
+
+
+            //Student student = new Student();    
+            //Students.Add(student);
+
+
+            bsStudents.DataSource = Students;
+            
+            //bsStudents.
+
+
+
+
+            SetDataBindings();
             ShowList();
         }
+
+        private void SetDataBindings()
+        {            
+            ctrlAge.DataBindings.Add(new Binding("EditValue", bsStudents, "Age", true));
+            ctrlListBox.DataBindings.Add(new Binding("ValueMember", bsStudents, "Name", true));
+        }
+
+        private void listBoxSelectedIndexChanged()
+        {
+            
+        }
+
+
 
         private void SelectStudent()
         {            
             if (_selectedStudent != null)
             {
-                _selectedStudent = Students[listBox1.SelectedIndex];
+                _selectedStudent = Students[ctrlListBox.SelectedIndex];
             }
         }
-
         private void DisplayStudent()
         {
             if (_selectedStudent != null)
             {
-                textName.Text = _selectedStudent.Name;
-                textAge.Text = _selectedStudent.Age.ToString(); 
-                textRegNumber.Text = _selectedStudent.RegistrationNumber.ToString();
+                ctrlName.Text = _selectedStudent.Name;
+                ctrlAge.Text = _selectedStudent.Age.ToString(); 
+                ctrlRegNumber.Text = _selectedStudent.RegistrationNumber.ToString();
 
                 if ((_selectedStudent.Courses != null) && (_selectedStudent.Courses.Count != 0))
                 {
@@ -49,10 +77,10 @@ namespace Session_07
                     {
                         string s = _selectedStudent.Courses[i].ToString();
 
-                        if (checkedListBoxControl1.Items.Contains(s))
+                        if (ctrlCourses.Items.Contains(s))
                         {
-                            int index = checkedListBoxControl1.Items.IndexOf(s);
-                            checkedListBoxControl1.SetItemChecked(index , true);                            
+                            int index = ctrlCourses.Items.IndexOf(s);
+                            ctrlCourses.SetItemChecked(index , true);                            
                         }
                         
                         
@@ -61,66 +89,38 @@ namespace Session_07
             }
             else
             {                
-                textName.Text = string.Empty;
-                textAge.Text = "0";
+                ctrlName.Text = string.Empty;
+                ctrlAge.Text = "0";
             }
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectStudent();
-
-            DisplayStudent();
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            //New
-            Student student = new Student();
-
-            Students.Add(student);
-
-            ShowList();
-
-            listBox1.SelectedIndex = Students.IndexOf(student);
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            UpdateStudent();
-
-            ShowList();
-        }
-
+        }        
         private void ShowList()
         {
-            listBox1.Items.Clear();
+            ctrlListBox.Items.Clear();
             if(Students != null)
             {
                 foreach (Student item in Students)
                 {
                     if (item != null)
                     {
-                        listBox1.Items.Add(string.Format("{0}", item.Name));
+                        ctrlListBox.Items.Add(string.Format("{0}", item.Name));
                     }
                 }
             }                        
         }
-
         private void UpdateStudent()
         {
             _originalStudent = _selectedStudent.ShallowCopy();
 
-            _selectedStudent.Name = textName.Text;
-            _selectedStudent.Age = Convert.ToInt32(textAge.Text);
-            _selectedStudent.RegistrationNumber = Convert.ToInt32(textRegNumber.Text);
+            _selectedStudent.Name = ctrlName.Text;
+            _selectedStudent.Age = Convert.ToInt32(ctrlAge.Text);
+            _selectedStudent.RegistrationNumber = Convert.ToInt32(ctrlRegNumber.Text);
 
-            if (checkedListBoxControl1.CheckedItems.Count != 0)
+            if (ctrlCourses.CheckedItems.Count != 0)
             {
                 bool flag = false;
-                for (int i = 0; i < checkedListBoxControl1.CheckedItems.Count; i++)
+                for (int i = 0; i < ctrlCourses.CheckedItems.Count; i++)
                 {                                      
-                    string s = checkedListBoxControl1.CheckedItems[i].ToString();
+                    string s = ctrlCourses.CheckedItems[i].ToString();
                     if (_selectedStudent.Courses != null)
                     {
                         for (int j = 0; j < _selectedStudent.Courses.Count; j++)
@@ -140,23 +140,21 @@ namespace Session_07
             }            
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void listBoxSelectedIndexChanged(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-        }
+            ListBox listBox = (ListBox)sender;
+            
+            string selectedName = listBox.SelectedItem.ToString();
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            //delete
-            if (_selectedStudent != null)
-            {
-                Students.Remove(_selectedStudent);
+                        
 
-                _selectedStudent = null;
 
-                ShowList();
-            }
-            DisplayStudent();
+
+
+
+
+            //bsListBox.DataSource = listBox;
+            //ctrlName.DataBindings.Add(new Binding("EditValue", bsListBox, "SelectedItem", true));
         }
     }
 }

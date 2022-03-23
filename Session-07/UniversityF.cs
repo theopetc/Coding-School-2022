@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace Session_07
 {
-    public partial class Form1 : Form
+    public partial class UniversityF : Form
     {
         private const string STUDENT_FILE = "student.json";
 
         private List<Student> studentList = new List<Student>();
-        public Form1()
+        public UniversityF()
         {
             InitializeComponent();
         }
@@ -29,20 +29,12 @@ namespace Session_07
             formProfessor p = new formProfessor();
             
             p.Show();
-        }
-
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            University university = new University();
-            UniversityForm4 u = new UniversityForm4();
-
-            u.Show();
-        }
+        }        
 
         private void newToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             Student student = new Student();    
-            formStudent s = new formStudent();
+            StudentF s = new StudentF();
             s.Students = studentList;
 
             s.ShowDialog();
