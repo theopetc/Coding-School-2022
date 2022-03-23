@@ -22,9 +22,13 @@ namespace Session_15
             var phone = txtCustomerPhone.Text;
             var tin = txtCustomerTIN.Text;
 
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname)
-                || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(tin))
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname) ||
+                string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(tin))
+            {
+                MessageBox.Show("Empty Textboxes!");
                 return;
+            }
+                
 
             var customer = new Customer() { Name = name , Surname = surname, Phone = phone, TIN = tin};
             _customerRepo.Create(customer);
