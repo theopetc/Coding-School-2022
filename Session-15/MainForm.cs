@@ -8,6 +8,7 @@ namespace Session_15
         private readonly IEntityRepo<Customer> _customerRepo;
 
         private List<Customer> _customers = new List<Customer>();
+        private bool pressedEdit = false;
         public MainForm(IEntityRepo<Customer> customerRepo)
         {
             InitializeComponent();
@@ -45,9 +46,7 @@ namespace Session_15
         {
             _customers = _customerRepo.GetAll();
             grvCustomers.DataSource = null;
-            grvCustomers.DataSource = _customers;
-            //grvCustomers.Refresh();
-            //grvCustomers.Update();
+            grvCustomers.DataSource = _customers;            
         }
 
         private void btnRemoveCustomer_Click(object sender, EventArgs e)
@@ -64,6 +63,50 @@ namespace Session_15
                     RefreshCustomers();
                 }
             }
+        }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            pressedEdit = true;
+            if (grvCustomers.Rows.Count > 0)
+            {
+                var selectedRow = grvCustomers.CurrentRow;
+                var selectedCustomer = selectedRow.DataBoundItem as Customer;
+
+                if (selectedCustomer is not null)
+                {
+                    txtCustomerName.Text = selectedCustomer.Name;
+                    txtCustomerSurname.Text = selectedCustomer.Surname;
+                    txtCustomerPhone.Text = selectedCustomer.Phone;
+                    txtCustomerTIN.Text = selectedCustomer.TIN;
+                }
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!pressedEdit)
+                return;
+            
+            if (grvCustomers.Rows.Count > 0)
+            {
+                var selectedRow = grvCustomers.CurrentRow;
+                var selectedCustomer = selectedRow.DataBoundItem as Customer;
+
+                if (selectedCustomer is not null)
+                {
+                    selectedCustomer.Name = txtCustomerName.Text;
+                    selectedCustomer.Surname = txtCustomerSurname.Text;
+                    selectedCustomer.Phone = txtCustomerPhone.Text;
+                    selectedCustomer.TIN = txtCustomerTIN.Text;
+                }
+                _customerRepo.Update(selectedCustomer.ID, selectedCustomer);
+                RefreshCustomers();
+            }
+            txtCustomerName.Text = string.Empty;
+            txtCustomerSurname.Text = string.Empty;
+            txtCustomerPhone.Text = string.Empty;
+            txtCustomerTIN.Text = string.Empty;
         }
     }
 }

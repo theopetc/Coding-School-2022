@@ -40,6 +40,7 @@
             this.txtCustomerPhone = new System.Windows.Forms.TextBox();
             this.txtCustomerTIN = new System.Windows.Forms.TextBox();
             this.btnEditCustomer = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,12 +145,24 @@
             this.btnEditCustomer.TabIndex = 11;
             this.btnEditCustomer.Text = "Edit...";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(264, 29);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 413);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.txtCustomerTIN);
             this.Controls.Add(this.txtCustomerPhone);
@@ -185,5 +198,6 @@
         private TextBox txtCustomerPhone;
         private TextBox txtCustomerTIN;
         private Button btnEditCustomer;
+        private Button btnSave;
     }
 }
