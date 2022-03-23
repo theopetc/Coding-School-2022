@@ -33,10 +33,7 @@ namespace Session_15
             var customer = new Customer() { Name = name , Surname = surname, Phone = phone, TIN = tin};
             _customerRepo.Create(customer);
 
-            txtCustomerName.Text = string.Empty;
-            txtCustomerSurname.Text = string.Empty;
-            txtCustomerPhone.Text = string.Empty;
-            txtCustomerTIN.Text = string.Empty;
+            EmptyTextBoxes();
 
             RefreshCustomers();
         }
@@ -107,6 +104,16 @@ namespace Session_15
                 _customerRepo.Update(selectedCustomer.ID, selectedCustomer);
                 RefreshCustomers();
             }
+            EmptyTextBoxes();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            EmptyTextBoxes();
+        }
+
+        private void EmptyTextBoxes()
+        {
             txtCustomerName.Text = string.Empty;
             txtCustomerSurname.Text = string.Empty;
             txtCustomerPhone.Text = string.Empty;

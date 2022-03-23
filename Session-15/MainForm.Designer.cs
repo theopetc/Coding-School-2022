@@ -41,6 +41,7 @@
             this.txtCustomerTIN = new System.Windows.Forms.TextBox();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,16 +67,20 @@
             // 
             // grvCustomers
             // 
+            this.grvCustomers.AllowUserToAddRows = false;
+            this.grvCustomers.AllowUserToDeleteRows = false;
             this.grvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvCustomers.Location = new System.Drawing.Point(21, 58);
+            this.grvCustomers.MultiSelect = false;
             this.grvCustomers.Name = "grvCustomers";
+            this.grvCustomers.ReadOnly = true;
             this.grvCustomers.RowTemplate.Height = 25;
-            this.grvCustomers.Size = new System.Drawing.Size(504, 270);
+            this.grvCustomers.Size = new System.Drawing.Size(591, 270);
             this.grvCustomers.TabIndex = 2;
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(590, 76);
+            this.txtCustomerName.Location = new System.Drawing.Point(677, 79);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(234, 23);
             this.txtCustomerName.TabIndex = 3;
@@ -83,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(546, 79);
+            this.label1.Location = new System.Drawing.Point(633, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 4;
@@ -92,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(531, 130);
+            this.label2.Location = new System.Drawing.Point(618, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 5;
@@ -101,7 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(544, 176);
+            this.label3.Location = new System.Drawing.Point(631, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 15);
             this.label3.TabIndex = 6;
@@ -110,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(560, 222);
+            this.label4.Location = new System.Drawing.Point(647, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 15);
             this.label4.TabIndex = 7;
@@ -118,21 +123,21 @@
             // 
             // txtCustomerSurname
             // 
-            this.txtCustomerSurname.Location = new System.Drawing.Point(590, 127);
+            this.txtCustomerSurname.Location = new System.Drawing.Point(677, 130);
             this.txtCustomerSurname.Name = "txtCustomerSurname";
             this.txtCustomerSurname.Size = new System.Drawing.Size(234, 23);
             this.txtCustomerSurname.TabIndex = 8;
             // 
             // txtCustomerPhone
             // 
-            this.txtCustomerPhone.Location = new System.Drawing.Point(590, 173);
+            this.txtCustomerPhone.Location = new System.Drawing.Point(677, 176);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
             this.txtCustomerPhone.Size = new System.Drawing.Size(234, 23);
             this.txtCustomerPhone.TabIndex = 9;
             // 
             // txtCustomerTIN
             // 
-            this.txtCustomerTIN.Location = new System.Drawing.Point(590, 219);
+            this.txtCustomerTIN.Location = new System.Drawing.Point(677, 222);
             this.txtCustomerTIN.Name = "txtCustomerTIN";
             this.txtCustomerTIN.Size = new System.Drawing.Size(234, 23);
             this.txtCustomerTIN.TabIndex = 10;
@@ -157,11 +162,22 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(345, 29);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 413);
+            this.ClientSize = new System.Drawing.Size(923, 413);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.txtCustomerTIN);
@@ -199,5 +215,6 @@
         private TextBox txtCustomerTIN;
         private Button btnEditCustomer;
         private Button btnSave;
+        private Button btnCancel;
     }
 }
