@@ -24,7 +24,7 @@ namespace CarServiceCenter.EF.Repositories
         public Task Delete(Guid ID)
         {
             var foundCustomer = _customers.SingleOrDefault(customer => customer.ID == ID);
-            if (foundCustomer != null)
+            if (foundCustomer is null)
                 return Task.CompletedTask;
             _customers.Remove(foundCustomer);
             return Task.CompletedTask;
