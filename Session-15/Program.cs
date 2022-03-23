@@ -21,7 +21,7 @@ namespace Session_15
 
 
             var services = new ServiceCollection();
-            services.AddSingleton<IEntityRepo<Customer>, MockCustomerRepo>();
+            services.AddSingleton<IEntityRepo<Customer>, CustomerRepo>();
             services.AddSingleton<MainForm>();
 
             ServiceProvider = services.BuildServiceProvider();
