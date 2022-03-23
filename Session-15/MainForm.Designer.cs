@@ -32,6 +32,14 @@
             this.btnRemoveCustomer = new System.Windows.Forms.Button();
             this.grvCustomers = new System.Windows.Forms.DataGridView();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCustomerSurname = new System.Windows.Forms.TextBox();
+            this.txtCustomerPhone = new System.Windows.Forms.TextBox();
+            this.txtCustomerTIN = new System.Windows.Forms.TextBox();
+            this.btnEditCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,12 +55,13 @@
             // 
             // btnRemoveCustomer
             // 
-            this.btnRemoveCustomer.Location = new System.Drawing.Point(342, 29);
+            this.btnRemoveCustomer.Location = new System.Drawing.Point(102, 29);
             this.btnRemoveCustomer.Name = "btnRemoveCustomer";
             this.btnRemoveCustomer.Size = new System.Drawing.Size(75, 23);
             this.btnRemoveCustomer.TabIndex = 1;
             this.btnRemoveCustomer.Text = "Remove";
             this.btnRemoveCustomer.UseVisualStyleBackColor = true;
+            this.btnRemoveCustomer.Click += new System.EventHandler(this.btnRemoveCustomer_Click);
             // 
             // grvCustomers
             // 
@@ -60,21 +69,95 @@
             this.grvCustomers.Location = new System.Drawing.Point(21, 58);
             this.grvCustomers.Name = "grvCustomers";
             this.grvCustomers.RowTemplate.Height = 25;
-            this.grvCustomers.Size = new System.Drawing.Size(396, 270);
+            this.grvCustomers.Size = new System.Drawing.Size(504, 270);
             this.grvCustomers.TabIndex = 2;
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(102, 29);
+            this.txtCustomerName.Location = new System.Drawing.Point(590, 76);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(234, 23);
             this.txtCustomerName.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(546, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(531, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Surname";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(544, 176);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Phone";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(560, 222);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "TIN";
+            // 
+            // txtCustomerSurname
+            // 
+            this.txtCustomerSurname.Location = new System.Drawing.Point(590, 127);
+            this.txtCustomerSurname.Name = "txtCustomerSurname";
+            this.txtCustomerSurname.Size = new System.Drawing.Size(234, 23);
+            this.txtCustomerSurname.TabIndex = 8;
+            // 
+            // txtCustomerPhone
+            // 
+            this.txtCustomerPhone.Location = new System.Drawing.Point(590, 173);
+            this.txtCustomerPhone.Name = "txtCustomerPhone";
+            this.txtCustomerPhone.Size = new System.Drawing.Size(234, 23);
+            this.txtCustomerPhone.TabIndex = 9;
+            // 
+            // txtCustomerTIN
+            // 
+            this.txtCustomerTIN.Location = new System.Drawing.Point(590, 219);
+            this.txtCustomerTIN.Name = "txtCustomerTIN";
+            this.txtCustomerTIN.Size = new System.Drawing.Size(234, 23);
+            this.txtCustomerTIN.TabIndex = 10;
+            // 
+            // btnEditCustomer
+            // 
+            this.btnEditCustomer.Location = new System.Drawing.Point(183, 29);
+            this.btnEditCustomer.Name = "btnEditCustomer";
+            this.btnEditCustomer.Size = new System.Drawing.Size(75, 23);
+            this.btnEditCustomer.TabIndex = 11;
+            this.btnEditCustomer.Text = "Edit...";
+            this.btnEditCustomer.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 413);
+            this.ClientSize = new System.Drawing.Size(836, 413);
+            this.Controls.Add(this.btnEditCustomer);
+            this.Controls.Add(this.txtCustomerTIN);
+            this.Controls.Add(this.txtCustomerPhone);
+            this.Controls.Add(this.txtCustomerSurname);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.grvCustomers);
             this.Controls.Add(this.btnRemoveCustomer);
@@ -94,5 +177,13 @@
         private Button btnRemoveCustomer;
         private DataGridView grvCustomers;
         private TextBox txtCustomerName;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private TextBox txtCustomerSurname;
+        private TextBox txtCustomerPhone;
+        private TextBox txtCustomerTIN;
+        private Button btnEditCustomer;
     }
 }

@@ -17,11 +17,22 @@ namespace Session_15
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             var name = txtCustomerName.Text;
-            if (string.IsNullOrEmpty(name))
+            var surname = txtCustomerSurname.Text;
+            var phone = txtCustomerPhone.Text;
+            var tin = txtCustomerTIN.Text;
+
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname)
+                || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(tin))
                 return;
-            var customer = new Customer() { Name = name };
+
+            var customer = new Customer() { Name = name , Surname = surname, Phone = phone, TIN = tin};
             _customerRepo.Create(customer);
+
             txtCustomerName.Text = string.Empty;
+            txtCustomerSurname.Text = string.Empty;
+            txtCustomerPhone.Text = string.Empty;
+            txtCustomerTIN.Text = string.Empty;
+
             RefreshCustomers();
         }
 
@@ -37,6 +48,22 @@ namespace Session_15
             grvCustomers.DataSource = _customers;
             //grvCustomers.Refresh();
             //grvCustomers.Update();
+        }
+
+        private void btnRemoveCustomer_Click(object sender, EventArgs e)
+        {
+            
+            if (grvCustomers.Rows.Count > 0)
+            {
+                var selectedRow = grvCustomers.CurrentRow;
+                var selectedCustomer = selectedRow.DataBoundItem as Customer;
+
+                if (selectedCustomer is not null)
+                {
+                    _customerRepo.Delete(selectedCustomer.ID);
+                    RefreshCustomers();
+                }
+            }
         }
     }
 }
