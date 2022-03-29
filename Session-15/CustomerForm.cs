@@ -3,13 +3,13 @@ using CarServiceCenterLibrary;
 
 namespace Session_15
 {
-    public partial class MainForm : Form
+    public partial class CustomerForm : Form
     {
         private readonly IEntityRepo<Customer> _customerRepo;
 
         private List<Customer> _customers = new List<Customer>();
         private bool pressedEdit = false;
-        public MainForm(IEntityRepo<Customer> customerRepo)
+        public CustomerForm(IEntityRepo<Customer> customerRepo)
         {
             InitializeComponent();
             _customerRepo = customerRepo;
@@ -105,6 +105,7 @@ namespace Session_15
                 RefreshCustomers();
             }
             EmptyTextBoxes();
+            pressedEdit = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -119,5 +120,7 @@ namespace Session_15
             txtCustomerPhone.Text = string.Empty;
             txtCustomerTIN.Text = string.Empty;
         }
+
+        
     }
 }

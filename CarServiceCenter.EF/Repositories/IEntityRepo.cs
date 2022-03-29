@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarServiceCenter.EF.Repositories
 {
-    public interface IEntityRepo<TEntity> where TEntity : Person
+    public interface IEntityRepo<TEntity> where TEntity : class
     {
         List<TEntity> GetAll();
         TEntity? GetById(Guid ID);

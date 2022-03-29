@@ -22,13 +22,13 @@ namespace Session_15
 
             var services = new ServiceCollection();
             services.AddSingleton<IEntityRepo<Customer>, CustomerRepo>();
-            services.AddSingleton<MainForm>();
+            services.AddSingleton<CustomerForm>();
 
             ServiceProvider = services.BuildServiceProvider();
-            var mainForm = ServiceProvider.GetRequiredService<MainForm>();
+            var mainForm = ServiceProvider.GetRequiredService<CustomerForm>();
 
 
-
+            Application.EnableVisualStyles();
             Application.Run(mainForm);
         }
     }

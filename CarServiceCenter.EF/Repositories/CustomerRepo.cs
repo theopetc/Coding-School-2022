@@ -46,8 +46,12 @@ namespace CarServiceCenter.EF.Repositories
             var foundCustomer = context.Customers.SingleOrDefault(x => x.ID == ID);
             if (foundCustomer is null)
                 return;
-            foundCustomer = entity;
-            //context.Customers.Update(foundCustomer);
+            
+            foundCustomer.Name = entity.Name;
+            foundCustomer.Surname = entity.Surname;
+            foundCustomer.Phone = entity.Phone;
+            foundCustomer.TIN = entity.TIN;
+            
             await context.SaveChangesAsync();            
         }
     }
