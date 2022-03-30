@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+
+<body>
+
+
+    <div class="reverse-container">
+        <table>
+            <tr>
+                <td><label for="txtName">Name</label></td>
+                <td><input id="txtName"></td>
+                <td><input type="button" onclick="reverseName()" value="Reverse Name"/></td>
+            </tr> 
+            <tr>
+                <td><span id="reversedName"></span></td>
+            </tr>            
+        </table>
+        <script type="text/javascript">
+            function reverseName(){
+                var name = document.getElementById("txtName").value;
+                if (name.length == 0){
+                    document.getElementById("reversedName").textContent = "Please enter a name";
+                    return;
+                }
+                document.getElementById("reversedName").textContent = name.split("").reverse().join("");                 
+            }
+        </script>
+    </div>
+
+    <div class="palindrome-container">
+        <table>
+            <tr>
+                <td><label for="txtWord">Enter a word</label></td>
+                <td><input id="txtWord"></td>
+                <td><input type="button" onclick="isPalindrome()" value="Check Palindrome"/></td>
+            </tr> 
+            <tr>
+                <td><span id="isPalindrome"></span></td>
+            </tr>            
+        </table>
+        <script>
+            function isPalindrome(){
+                var word = document.getElementById("txtWord").value;
+                var length = word.length;
+                if (length == 0){
+                    document.getElementById("isPalindrome").textContent = "Please enter a word";
+                    return;
+                }
+                for(let i = 0; i<length/2; i++){
+                    if(word[i] !== word[length - 1 - i]){
+                        var result = "Not a palindrome";
+                        document.getElementById("isPalindrome").textContent = result;
+                        return;
+                    }
+                }
+                result = "Is a palindrome";
+                document.getElementById("isPalindrome").textContent = result;
+            }
+        </script>
+    </div>
+
+    <div class="customer-container">
+        <h3>Add Customer</h3>
+        <table>
+            <tr>
+                <td><label for="txtCustomerName">Name</label></td>
+                <td><input id="txtCustomerName"></td>            
+            </tr>
+
+            <tr>
+                <td><label for="txtCustomerSurname">Surname</label></td>
+                <td><input id="txtCustomerSurname"></td>            
+            </tr>
+
+            <tr>
+                <td><label for="txtCustomerAge">Age</label></td>
+                <td><input id="txtCustomerAge"></td>            
+            </tr>
+
+            <tr>
+                <td><label for="txtCustomerGender">Gender</label></td>
+                <td><input id="txtCustomerGender"></td>            
+                <td><input type="button" onclick="addCustomer()" value="Add Customer"/></td>
+            </tr>
+        </table>
+
+        <div class="customer-table">
+            <table id="customer-table">
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+
+
+
+            </table>
+        </div>
+
+        
+        
+
+        <script>
+
+            function addCustomer(){
+                var name = document.getElementById("txtCustomerName").value;
+                var surname = document.getElementById("txtCustomerSurname").value;
+                var age = document.getElementById("txtCustomerAge").value;
+                var gender = document.getElementById("txtCustomerGender").value;
+                
+                let customerInfo = {"Name":name, "Surname":surname, "Age":age, "Gender":gender};
+                
+                var customerTable = document.getElementById("customer-table");
+                let newRow = document.createElement("tr");
+                Object.values(customerInfo).forEach((value) => {
+                    let cell = document.createElement("td");
+                    cell.innerText = value;
+                    newRow.appendChild(cell);
+                })
+                customerTable.appendChild(newRow);
+
+            }
+        </script>
+
+
+        
+    
+    </div>
+
+    <div class="multiply-function">
+        <h3>Multiplication</h3>
+        <table>
+            <tr>
+                <td><label for="firstOperand">First Operand</label></td>
+                <td><input id="firstOperand"></td>                
+            </tr>
+            <tr>
+                <td><label for="secondOperand">Second Operand</label></td>
+                <td><input id="secondOperand"></td>            
+                <td><input type="button" onclick="multiply()" value="Multiply"/></td>    
+            </tr> 
+            <tr>
+                <td><span id="result"></span></td>
+            </tr>            
+        </table>
+        <script type="text/javascript">
+            function multiply(){
+                let firstOperand = document.getElementById("firstOperand").value;
+                let secondOperand = document.getElementById("secondOperand").value;
+
+                if(isNaN(firstOperand) || isNaN(secondOperand)){
+                    document.getElementById("result").textContent = "Input is not a number";
+                    return;
+                }
+
+                document.getElementById("result").textContent = firstOperand*secondOperand;
+
+                
+            }        
+        </script>
+    </div>
+
+    <div class="fifth-exercise">
+        <h3>Edit String</h3>
+        <table>
+            <tr>
+                <td><label for="txtString">Input</label></td>
+                <td><input id="txtString"></td>
+                <td><input type="button" onclick="editString()" value="Edit Input"/></td>
+            </tr> 
+            <tr>
+                <td><span id="editedString"></span></td>
+            </tr>            
+        </table>
+        <script type="text/javascript">
+            function editString(){
+                var input = document.getElementById("txtString").value;
+                if (input.length == 0){
+                    document.getElementById("editedString").textContent = "Emtpy Input!";
+                    return;
+                }
+                let inputCharacters = input.split("");
+                let lastCharacter = inputCharacters[input.length - 1];
+
+                if (!isNaN(lastCharacter)){
+                    inputCharacters[input.length - 1]++;
+                    input = inputCharacters.join("");
+                }
+                if (isNaN(lastCharacter)){
+                    input+="1";
+                }
+
+                document.getElementById("editedString").textContent = input;
+                
+            }        
+        </script>
+    </div>
+
+</body>
